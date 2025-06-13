@@ -5,19 +5,22 @@
 .cq-roster {
 	position: relative;
 	z-index: 10;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1cqmax 2cqmax;
 	width: 100%;
 	padding-block: 3cqmax 10cqmax;
 
 	h2 {
 		width: 100%;
 		text-align: center;
-		margin-block: 0;
+		margin-block: 0 1cqmax;
 		font-size: 4cqmax;
 		text-transform: uppercase;
 	}
+}
+
+.cq-roster-grid {
+	display: flex;
+	gap: 1cqmax 2cqmax;
+	width: 100%;
 }
 
 .cq-roster-character {
