@@ -2,7 +2,7 @@
 /*
 Plugin Name: Campos Quest
 Description: Adds the Campos Quest game as a shortcode and page template.
-Version:     1.3.0
+Version:     1.3.1
 Author:      Tomas Mulder
 Author URI:  https://www.thinkaquamarine.com
 License:     GPL2
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define constants
  */
-define( 'CAMPOS_QUEST_VERSION', '1.3.0' );
+define( 'CAMPOS_QUEST_VERSION', '1.3.1' );
 define( 'CAMPOS_QUEST_BASENAME', plugin_basename( __FILE__ ) );
 define( 'CAMPOS_QUEST_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CAMPOS_QUEST_PLUGIN_INC', CAMPOS_QUEST_PLUGIN_DIR . 'includes/' );
