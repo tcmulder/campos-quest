@@ -28,7 +28,7 @@ if( ! class_exists( 'CamposQuestUpdateChecker' ) ) {
 			$this->plugin_slug = CAMPOS_QUEST_BASENAME;
 			$this->version = CAMPOS_QUEST_VERSION;
 			$this->cache_key = 'campos_quest_custom_upd';
-			$this->cache_allowed = false;
+			$this->cache_allowed = true;
 			$this->updater_json = 'https://raw.githubusercontent.com/tcmulder/campos-quest/refs/heads/master/updates/info.json';
 
 			add_filter( 'plugins_api', array( $this, 'info' ), 20, 3 );
@@ -61,7 +61,7 @@ if( ! class_exists( 'CamposQuestUpdateChecker' ) ) {
 					return false;
 				}
 
-				set_transient( $this->cache_key, $remote, DAY_IN_SECONDS );
+				set_transient( $this->cache_key, $remote, MINUTE_IN_SECONDS );
 
 			}
 
@@ -74,11 +74,8 @@ if( ! class_exists( 'CamposQuestUpdateChecker' ) ) {
 
 		function info( $res, $action, $args ) {
 
-			// print_r( $action );
-			// print_r( $args );
-
 			// do nothing if you're not getting plugin information right now
-			if( 'plugin_information' !== $action ) {
+			if( $action !== 'plugin_information' ) {
 				return $res;
 			}
 
