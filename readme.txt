@@ -4,7 +4,7 @@ Contributors: thinkaquamarine
 Tags: game
 Requires at least: 6.5.4
 Tested up to: 6.8.1
-Stable tag: 1.3.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,10 +20,6 @@ This plugin adds the Campos Quest game to your website. It can either be set up 
 2. Activate the plugin through the "Plugins" menu in WordPress.
 
 == Changelog ==
-
-= 1.3.0 =
-
-* Game enhanced to support updates.
 
 = 1.2.0 =
 

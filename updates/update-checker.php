@@ -1,13 +1,11 @@
 <?php
 /*
- * Misha Update Checker
+ * Update Checker
  * 
- * This simple plugin does nothing, only gets updates from a custom server
+ * This script facilitates plugin updates. It is inspired heavily by 
+ * Misha Rudrastyh's excellent tutorial.
  * 
- * Version: 1.0
- * Author: Misha Rudrastyh
- * Author URI: https://rudrastyh.com
- * License: GPL
+ * @see https://rudrastyh.com/wordpress/self-hosted-plugin-update.html
  */
 
 /**/
@@ -16,9 +14,9 @@
 defined( 'ABSPATH' ) || exit;
 
 
-if( ! class_exists( 'mishaUpdateChecker' ) ) {
+if( ! class_exists( 'CamposQuestUpdateChecker' ) ) {
 
-	class mishaUpdateChecker{
+	class CamposQuestUpdateChecker{
 
 		public $plugin_slug;
 		public $version;
@@ -143,7 +141,7 @@ if( ! class_exists( 'mishaUpdateChecker' ) ) {
 			) {
 				$res = new stdClass();
 				$res->slug = $this->plugin_slug;
-				$res->plugin = plugin_basename( __FILE__ ); // misha-update-plugin/misha-update-plugin.php
+				$res->plugin = $this->plugin_slug;
 				$res->new_version = $remote->version;
 				$res->tested = $remote->tested;
 				$res->package = $remote->download_url;
@@ -172,6 +170,6 @@ if( ! class_exists( 'mishaUpdateChecker' ) ) {
 
 	}
 
-	new mishaUpdateChecker();
+	new CamposQuestUpdateChecker();
 
 }
