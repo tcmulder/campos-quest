@@ -3,7 +3,7 @@
 	"slug" : "campos-quest",
 	"author" : "<a href='https://www.thinkaquamarine.com'>Aquamarine</a>",
 	"author_profile" : "https://profiles.wordpress.org/thinkaquamarine/",
-	"version" : "1.3.3",
+	"version" : "1.3.4",
 	"download_url" : "https://github.com/tcmulder/campos-quest/raw/refs/heads/master/updates/campos-quest.zip",
 	"requires" : "6.5.4",
 	"tested" : "6.8.1",
