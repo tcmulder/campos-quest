@@ -31,6 +31,7 @@ $manifest = ! is_wp_error( $manifest_response ) ? json_decode( wp_remote_retriev
         require_once( CAMPOS_QUEST_PLUGIN_INC . 'partials/messages.php' );
         require_once( CAMPOS_QUEST_PLUGIN_INC . 'partials/score.php' );
         require_once( CAMPOS_QUEST_PLUGIN_INC . 'partials/controls.php' );
+        require_once( CAMPOS_QUEST_PLUGIN_INC . 'partials/version.php' );
         ?>
     </div>
 </div>

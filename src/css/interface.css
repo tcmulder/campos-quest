@@ -47,6 +47,17 @@
 	}
 }
 
+.cq-v {
+	pointer-events: none;
+	position: absolute;
+	z-index: 999;
+	right: 0.2cqmax;
+	bottom: 0;
+	color: var(--cq-c-white);
+	font-size: 1cqmax;
+	opacity: 0.15;
+}
+
 @keyframes count-in {
 	0% {
 		opacity: 0;
