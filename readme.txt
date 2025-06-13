@@ -35,4 +35,4 @@ This plugin adds the Campos Quest game to your website. It can either be set up 
 
 = 1.0.0 =
 
-* Initial game released
+* Initial game released.
