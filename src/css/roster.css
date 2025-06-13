@@ -1,0 +1,62 @@
+/**
+ * Styles for the character selection screen.
+ */
+
+.cq-roster {
+	position: relative;
+	z-index: 10;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1cqmax 2cqmax;
+	width: 100%;
+	padding-block: 3cqmax 10cqmax;
+
+	h2 {
+		width: 100%;
+		text-align: center;
+		margin-block: 0;
+		font-size: 4cqmax;
+		text-transform: uppercase;
+	}
+}
+
+.cq-roster-character {
+	cursor: pointer;
+	position: relative;
+	background-color: transparent;
+	border: 3px solid var(--cq-c-white);
+	background-color: color-mix(in srgb, transparent, var(--cq-c-white) 10%);
+	color: var(--cq-c-white);
+	flex: 1;
+	aspect-ratio: 1.5;
+
+	&.is-active {
+		background-color: var(--cq-c-yellow);
+
+		.cq-roster-name {
+			color: var(--cq-c-yellow);
+		}
+	}
+
+	* {
+		pointer-events: none;
+	}
+
+	[data-state]:not([data-state="roster"]) {
+		opacity: 0;
+	}
+
+	svg {
+		width: auto;
+		height: calc(var(--cq-h-hero) * 2);
+	}
+}
+
+.cq-roster-name {
+	position: absolute;
+	inset: 110% 0 auto 0;
+	text-align: center;
+	font-size: 3.8cqmax;
+	text-transform: uppercase;
+	text-align: center;
+}

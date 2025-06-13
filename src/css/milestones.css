@@ -1,0 +1,28 @@
+/**
+ * Styles for milestone markers with their progress bar timers.
+ */
+
+.cq-milestone-message {
+	display: none;
+
+	.cq-milestone.has-collided & {
+		display: block;
+	}
+}
+
+.cq-milestone-progress {
+	opacity: 0;
+	.cq-milestone.has-collided & {
+		opacity: 1;
+	}
+}
+
+.cq-milestone-progress-bar {
+	opacity: 0;
+	clip-path: inset(0 100% 0 0);
+	.cq-milestone.has-collided & {
+		opacity: 1;
+		clip-path: inset(0 0% 0 0);
+		transition: clip-path var(--cq-milestone-delay) linear;
+	}
+}

@@ -1,0 +1,61 @@
+# aquamarine stuff
+aqua-init.sh
+config-aqua-init.sh
+
+# localwp
+local-xdebuginfo.php
+
+# editor
+.vscode
+
+# apple system files
+.DS_Store
+
+# sitemaps
+sitemap.xml
+sitemap.xml.gz
+
+# build tool
+.sass-cache/
+.parcel-cache/
+node_modules/
+
+# wordfence
+/wp-content/plugins/wordfence/tmp/
+/wp-content/wflogs/
+
+# fly plugin generated images
+/wp-content/uploads/fly-images/
+
+# updraft backups
+/wp-content/updraft/
+
+# wp engine
+.wpe-pull-ignore
+.wpe-push-ignore
+
+# vite logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# vite editor directories and files
+.vite
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
