@@ -11,7 +11,7 @@
 	"last_updated" : "2025-06-10 00:00:00",
 	"sections" : {
 		"description" : "This plugin adds the Campos Quest game to your website. It can either be set up as a host, meaning game scoring data will be saved to your website, or as a client, meaning game scoring data will be saved on another website that is hosting the game.",
-		"installation" : "Upload the game to your website and activate it.",
+		"installation" : "Upload the game to your website\n then <br />activate it.",
 		"changelog" : "Initial release"
 	}
 }
