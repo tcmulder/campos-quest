@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 define( 'CAMPOS_QUEST_VERSION', '1.3.0' );
 define( 'CAMPOS_QUEST_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'CAMPOS_QUEST_BASENAME', plugin_basename( __FILE__ ) );
 define( 'CAMPOS_QUEST_PLUGIN_INC', CAMPOS_QUEST_PLUGIN_DIR . 'includes/' );
 define( 'CAMPOS_QUEST_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
 define( 'CAMPOS_QUEST_LEVELS', 4 );
@@ -36,3 +37,4 @@ require_once CAMPOS_QUEST_PLUGIN_INC . 'admin/templates.php';
 require_once CAMPOS_QUEST_PLUGIN_INC . 'admin/enqueue.php';
 require_once CAMPOS_QUEST_PLUGIN_INC . 'admin/api.php';
 require_once CAMPOS_QUEST_PLUGIN_INC . 'admin/settings.php';
+require_once CAMPOS_QUEST_PLUGIN_INC . 'admin/updates.php';
