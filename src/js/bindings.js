@@ -46,15 +46,18 @@ export const bindControls = () => {
 	document.addEventListener('keydown', (e) => {
 		// Jump on space bar or up click
 		if (e.key === 'ArrowUp' || e.key === ' ') {
+			e.preventDefault();
 			doJump();
 			// Move forward (if free range mode is activated)
 		} else if (e.key === 'ArrowRight') {
 			if (!state.enableAutoplay) {
+				e.preventDefault();
 				doRun();
 			}
 			// Move backward (if free range mode is activated)
 		} else if (e.key === 'ArrowLeft') {
 			if (!state.enableAutoplay) {
+				e.preventDefault();
 				doBackslide();
 			}
 		}
@@ -67,11 +70,14 @@ export const bindControls = () => {
 		}
 		if (e.key === 'ArrowDown') {
 			if (state.status.move === 'none') {
+				e.preventDefault();
 				doRun();
 			} else {
+				e.preventDefault();
 				doStop();
 			}
 		} else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+			e.preventDefault();
 			doStop();
 		}
 	});
