@@ -4,4 +4,4 @@
  */
 ?>
 
-<div class="cq-v">v1.3.5</div>
+<div class="cq-v">v1.3.6</div>
