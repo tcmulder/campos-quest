@@ -24,6 +24,7 @@ This plugin adds the Campos Quest game to your website. It can either be set up 
 = 1.3.6 =
 
 * Update Susann's name spelling.
+* Add build files to repo.
 
 = 1.3.5 =
 
