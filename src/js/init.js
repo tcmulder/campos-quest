@@ -7,6 +7,7 @@ import { trackCollisions } from './collisions';
 import { setLevel } from './level';
 import { loadCharacter } from './characters';
 import { setIntro, setMessageActions } from './messages';
+import { initLeaderboardButton } from './leaderboard-button';
 
 import positiveSound from '../mp3/positive.mp3';
 import negativeSound from '../mp3/negative.mp3';
@@ -208,6 +209,8 @@ export const init = async (el) => {
 	bindCharacterControls();
 	// Run functions on activation of specific messages
 	setMessageActions();
+	// Initialize leaderboard button functionality
+	initLeaderboardButton();
 	// Show the intro message
 	await setIntro();
 	// Load the selected character's SVG

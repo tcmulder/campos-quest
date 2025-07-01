@@ -1,5 +1,5 @@
 import { state } from './state';
-import { doRun, doJump, doStop, doBackslide, doPause } from './movement';
+import { doRun, doJump, doStop, doBackslide } from './movement';
 import { getParam } from './utilities';
 import { toggleMusic, toggleSFX } from './sounds';
 
