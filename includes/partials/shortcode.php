@@ -26,10 +26,11 @@ if ( $debug_enabled ) {
         <?php endif; ?>
     </dialog>
 <?php else : ?>
-    <div class="cq-portal">
-        <button class="cq-portal-button">
-            <?php _e( 'Play Campos Quest', 'campos-quest' ); ?>
-        </button>
+    <div id="campos-quest" class="cq-portal">
+        <div class="cq-portal-overlay">
+            <span class="cq-portal-label"><?php esc_html_e( 'Campos Quest', 'campos-quest' ); ?></span>
+            <div role="button" tabindex="0" class="cq-portal-button" aria-label="<?php _e( 'Play Campos Quest', 'campos-quest' ); ?>"></div>
+        </div>
         <iframe class="cq-portal-iframe" data-src="<?php echo esc_url( $iframe_url ); ?>"></iframe>
     </div>
 <?php endif; ?>
