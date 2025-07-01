@@ -7,7 +7,6 @@ import { trackCollisions } from './collisions';
 import { setLevel } from './level';
 import { loadCharacter } from './characters';
 import { setIntro, setMessageActions } from './messages';
-import { initLeaderboardButton } from './leaderboard-button';
 
 import positiveSound from '../mp3/positive.mp3';
 import negativeSound from '../mp3/negative.mp3';
@@ -162,6 +161,8 @@ export const init = async (el) => {
 	state.elControlToggleSFX = state.elStage.querySelector('[name=sfx]');
 	// The toggle control for music
 	state.elControlToggleMusic = state.elStage.querySelector('[name=music]');
+	// The leaderboard display button for the intro screen
+	state.elControlLeaderboard = state.elStage.querySelector('.cq-show-scores');
 
 	// The container of the current user's score
 	state.elScore = state.elStage.querySelector('.cq-score');
@@ -209,8 +210,6 @@ export const init = async (el) => {
 	bindCharacterControls();
 	// Run functions on activation of specific messages
 	setMessageActions();
-	// Initialize leaderboard button functionality
-	initLeaderboardButton();
 	// Show the intro message
 	await setIntro();
 	// Load the selected character's SVG

@@ -1,4 +1,24 @@
 import { state } from './state';
+import { setMessage } from './messages';
+
+/**
+ * Show temporary leaderboard on intro screen
+ */
+export const showLeaderboard = async () => {
+	// Load any new leaderboard data
+	setLeaderboard();
+	// Prep timer to reset leaderboard if inactive for a while
+	clearTimeout(state.timer);
+	state.timer = setTimeout(async () => {
+		setMessage('intro');
+	}, 3000);
+	// Show the leaderboard message
+	await setMessage('leaderboard');
+	// After closing the message cancel the reset timer
+	clearTimeout(state.timer);
+	// Go back to intro on close
+	setMessage('intro');
+};
 
 /**
  * Get score leaderboard
