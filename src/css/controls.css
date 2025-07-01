@@ -45,6 +45,21 @@
 	}
 		
 }
+.cq-button-hollow {
+	padding: 0.8cqmax 1cqmax;
+	border: 3px solid var(--cq-c-white);
+	background-color: color-mix(in srgb, transparent, var(--cq-c-white) 10%);
+	color: var(--cq-c-white);
+	font-size: 2.8cqmax;
+	text-transform: uppercase;
+	border-radius: 0;
+
+	&:disabled {
+		cursor: not-allowed;
+		background-color: var(--cq-c-light-grey);
+	}
+		
+}
 .cq-toggle {
 	position: relative;
 	font-size: 3.5cqmax;
