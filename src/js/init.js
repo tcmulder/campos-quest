@@ -48,6 +48,8 @@ export const init = async (el) => {
 			return (200 - this.percentage) / 100;
 		},
 	};
+	// Duration of time to consider the user inactive in ms
+	state.delayInactive = 10000;
 	// Countdown duration
 	state.delayCountdown = 1000;
 	// Duration of milestone messages in ms
@@ -161,6 +163,8 @@ export const init = async (el) => {
 	state.elControlToggleSFX = state.elStage.querySelector('[name=sfx]');
 	// The toggle control for music
 	state.elControlToggleMusic = state.elStage.querySelector('[name=music]');
+	// The leaderboard display button for the intro screen
+	state.elControlLeaderboard = state.elStage.querySelector('.cq-show-scores');
 
 	// The container of the current user's score
 	state.elScore = state.elStage.querySelector('.cq-score');

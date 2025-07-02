@@ -1,5 +1,6 @@
 import { state } from './state';
-import { doRun, doJump, doStop, doBackslide, doPause } from './movement';
+import { doRun, doJump, doStop, doBackslide } from './movement';
+import { showLeaderboard } from './leaderboard';
 import { getParam } from './utilities';
 import { toggleMusic, toggleSFX } from './sounds';
 
@@ -31,6 +32,11 @@ export const bindControls = () => {
 			e.stopPropagation();
 			location.reload();
 		});
+	});
+
+	// Temporarily show leaderboard via button
+	state.elControlLeaderboard.addEventListener('click', async () => {
+		showLeaderboard();
 	});
 
 	/**

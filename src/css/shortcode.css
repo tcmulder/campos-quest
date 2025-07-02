@@ -2,15 +2,58 @@
  * Styles for the WordPress shortcode.
  */
 body.cq-lightbox-open {
-	overflow: hidden !important;
+	overflow: hidden !important; /* prevent scroll */
 }
 
-.cq-portal {
+/* NOTE: we use an ID to increase specificity such that it should override most theme styling */
+#campos-quest {
+	overflow: hidden;
 	position: relative;
 	width: 100%;
 	max-width: none;
 	aspect-ratio: 16 / 9;
+	max-height: 200px;
 	background-color: #000;
+
+	&:has(.cq-portal-button button:hover, .cq-portal-button button:focus) {
+		&::before {
+			opacity: 0.32;
+		}
+		.cq-portal-button {
+			transform: scale(1.025);
+		}
+			
+	}
+
+	&.is-active {
+		max-height: 3000px;
+		transition: max-height 2s ease-out;
+		&::before,
+		.cq-portal-overlay {
+			display: none;
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		height: 200px;
+		width: calc(1800px * 4);
+		background-image: url("../img/shortcode-bg.svg");
+		background-size: 33.3333% 100%;
+		background-position: left center;
+		opacity: 0.2;
+		transition: opacity 0.3s;
+		will-change: transform;
+		animation: cq-marquee 180s linear infinite;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+	}
 
 	iframe {
 		display: block;
@@ -18,63 +61,107 @@ body.cq-lightbox-open {
 		width: 100%;
 		border: 0;
 	}
-}
 
-.cq-portal-button {
-	cursor: pointer;
-	position: absolute;
-	inset: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: transparent;
-	border: 0;
-	color: #fff;
-	font-size: 2rem;
-}
-
-.cq-portal-lightbox {
-	flex-direction: column !important;
-	min-width: 100vw !important;
-	min-height: 100vh !important;
-	max-width: 100vw !important;
-	max-height: 100vh !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	border: none !important;
-	background-color: black !important;
-
-	&::backdrop {
-		background-color: black;
+	.cq-portal-overlay {
+		cursor: pointer;
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		gap: 15px;
+		padding: 15px;
+		flex-wrap: wrap;
 	}
 
-	iframe {
-		flex: 1 !important;
-		width: 100vw !important;
-		height: 100% !important;
-		max-width: none !important;
+	.cq-portal-label {
+		aspect-ratio: 567 / 53;
+		width: 567px;
+		max-width: 100%;
+		color: transparent;
+		font-size: 10px;
+		background-image: url("../img/shortcode-logo.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: left bottom;
+	}
+	
+	.cq-portal-button {
+		cursor: pointer;
+		background-color: transparent;
 		border: 0;
-		background-color: black;
-		opacity: 0;
-		transition: opacity 0.6s ease 0.1s;
+		width: 300px;
+		height: 87px;
+		max-width: 100%;
+		background-image: url("../img/shortcode-button.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: left top;
+		transition: transform 0.3s;
 
-		&.is-loaded {
-			opacity: 1;
+		/* The button is likely styled: try to override anything unhelpful */
+		button {
+			display: block !important;
+			position: absolute !important;
+			inset: -50vw !important;
+			z-index: 1 !important;
+			opacity: 0 !important;
 		}
 	}
-
-	&[open] {
-		display: flex !important;
+	
+	.cq-portal-lightbox {
+		flex-direction: column !important;
+		min-width: 100vw !important;
+		min-height: 100vh !important;
+		max-width: 100vw !important;
+		max-height: 100vh !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		border: none !important;
+		background-color: black !important;
+	
+		&::backdrop {
+			background-color: black;
+		}
+	
+		iframe {
+			flex: 1 !important;
+			width: 100vw !important;
+			height: 100% !important;
+			max-width: none !important;
+			border: 0;
+			background-color: black;
+			opacity: 0;
+			transition: opacity 0.6s ease 0.1s;
+	
+			&.is-loaded {
+				opacity: 1;
+			}
+		}
+	
+		&[open] {
+			display: flex !important;
+		}
+	}
+	
+	.cq-portal-lightbox-close {
+		width: 100%;
+		padding: 5px;
+		background-color: black;
+	}
+	
+	:where(.cq-portal-lightbox-close button) {
+		background: white;
+		color: black;
 	}
 }
 
-.cq-portal-lightbox-close {
-	width: 100%;
-	padding: 5px;
-	background-color: black;
-}
-
-:where(.cq-portal-lightbox-close button) {
-	background: white;
-	color: black;
+@keyframes cq-marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-33.3333%);
+	}
 }

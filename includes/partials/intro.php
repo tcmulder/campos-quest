@@ -29,6 +29,8 @@ $allow_sfx = '1' === get_option( 'campos_quest_settings_sfx' );
 			<?php endif; ?>
 			
 			<button class="cq-button-yellow" data-message-resolve><?php _e( 'Start Game', 'campos-quest' ); ?></button>
+			
+			<button class="cq-button-hollow cq-show-scores"><?php _e( 'View Scores', 'campos-quest' ); ?></button>
 
 			<?php if ( $allow_sfx ) : ?>
 	
