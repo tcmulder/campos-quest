@@ -15,10 +15,14 @@ body.cq-lightbox-open {
 	max-height: 200px;
 	background-color: #000;
 
-	&:has(.cq-portal-button:hover, .cq-portal-button:focus) {
+	&:has(.cq-portal-button button:hover, .cq-portal-button button:focus) {
 		&::before {
-			opacity: 0.3;
+			opacity: 0.32;
 		}
+		.cq-portal-button {
+			transform: scale(1.025);
+		}
+			
 	}
 
 	&.is-active {
@@ -84,6 +88,7 @@ body.cq-lightbox-open {
 	}
 	
 	.cq-portal-button {
+		cursor: pointer;
 		background-color: transparent;
 		border: 0;
 		width: 300px;
@@ -93,13 +98,15 @@ body.cq-lightbox-open {
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: left top;
-		
-		&::before {
-			cursor: pointer;
-			content: "";
-			position: absolute;
-			inset: -50vw;
-			z-index: 1;
+		transition: transform 0.3s;
+
+		/* The button is likely styled: try to override anything unhelpful */
+		button {
+			display: block !important;
+			position: absolute !important;
+			inset: -50vw !important;
+			z-index: 1 !important;
+			opacity: 0 !important;
 		}
 	}
 	

@@ -4,8 +4,10 @@ import '../css/shortcode.css';
  * Show the game in the iframe on click of the shortcode's button
  */
 document.querySelectorAll('.cq-portal')?.forEach((wrap) => {
-	const button = wrap.querySelector('.cq-portal-button');
-	button.addEventListener('click', function () {
+	wrap.addEventListener('click', function (e) {
+		if (e.target.tagName !== 'BUTTON') {
+			return;
+		}
 		wrap.classList.add('is-active');
 		const iframe = wrap.querySelector('.cq-portal-iframe');
 		iframe.src = iframe.dataset.src;
