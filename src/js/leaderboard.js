@@ -6,12 +6,12 @@ import { setMessage } from './messages';
  */
 export const showLeaderboard = async () => {
 	// Load any new leaderboard data
-	setLeaderboard();
+	await setLeaderboard();
 	// Prep timer to reset leaderboard if inactive for a while
 	clearTimeout(state.timer);
 	state.timer = setTimeout(async () => {
 		setMessage('intro');
-	}, 3000);
+	}, state.delayInactive);
 	// Show the leaderboard message
 	await setMessage('leaderboard');
 	// After closing the message cancel the reset timer

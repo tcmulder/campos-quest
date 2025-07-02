@@ -48,6 +48,8 @@ export const init = async (el) => {
 			return (200 - this.percentage) / 100;
 		},
 	};
+	// Duration of time to consider the user inactive in ms
+	state.delayInactive = 10000;
 	// Countdown duration
 	state.delayCountdown = 1000;
 	// Duration of milestone messages in ms

@@ -126,7 +126,7 @@ const doScroll = (elMessage, durationScroll = 10000) => {
 			elScroller.removeEventListener('touchmove', handleUserScroll);
 			elScroller.removeEventListener('mousewheel', handleUserScroll);
 
-			// Set a timer to restart scrolling after 10 seconds
+			// Set a timer to restart scrolling
 			clearTimeout(state.timer);
 			state.timer = setTimeout(() => {
 				// Calculate how much of the scroll has already been completed
@@ -176,14 +176,14 @@ const doScroll = (elMessage, durationScroll = 10000) => {
 								) {
 									elMessage.querySelector('.cq-restart')?.click();
 								}
-							}, 10000);
+							}, state.delayInactive);
 						}
 					};
 
 					// Start the continued animation
 					requestAnimationFrame(continueScrollAnimation);
 				}
-			}, 10000);
+			}, state.delayInactive);
 		};
 
 		// Add event listeners to detect user interaction
